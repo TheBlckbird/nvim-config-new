@@ -15,6 +15,7 @@ return {
 				-- "rust_analyzer", -- Installed via rustup component add rust-analyzer
 				-- "stylua",
 				"eslint",
+        "marksman",
 			},
 		},
 		--		event = "VeryLazy",
@@ -25,7 +26,6 @@ return {
     "neovim/nvim-lspconfig",
 
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local on_attach = function(clint, bufnr)
@@ -34,12 +34,17 @@ return {
         end
       end
 
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
         on_attach = on_attach,
       })
 
-      lspconfig.rust_analyzer.setup({
+      vim.lsp.config("rust_analyzer", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      vim.lsp.config("marksman", {
         capabilities = capabilities,
         on_attach = on_attach,
       })
