@@ -13,4 +13,4 @@ set.smartcase = true
 set.cursorline = true
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- vim.g.maplocalleader = "\\"

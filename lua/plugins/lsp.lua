@@ -28,10 +28,12 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local on_attach = function(clint, bufnr)
+      local on_attach = function(clint, _)
         if clint.server_capabilities.inlayHintProvider then
           vim.lsp.inlay_hint.enable(true)
         end
+
+        vim.diagnostic.config({ virtual_text = true })
       end
 
       vim.lsp.config("lua_ls", {
@@ -59,5 +61,12 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       }
     }
+  },
+
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },ee
   },
 }
