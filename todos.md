@@ -4,7 +4,7 @@
 - [x] keybindings
 - [x] neo tree
 - [x] null-ls
-- [ ] start screen
+- [x] start screen
 - [ ] tabs
 - [ ] lsp list
 - [ ] typst
