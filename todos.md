@@ -2,9 +2,10 @@
 
 - [x] error lens
 - [x] keybindings
-- [ ] neo tree
+- [x] neo tree
 - [ ] null-ls
 - [ ] tabs
 - [ ] lsp list
 - [ ] typst
 - [ ] rustacean vim (?)
+- [ ] Java
