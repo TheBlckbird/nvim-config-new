@@ -3,7 +3,7 @@
 - [x] error lens
 - [x] keybindings
 - [x] neo tree
-- [ ] null-ls
+- [x] null-ls
 - [ ] start screen
 - [ ] tabs
 - [ ] lsp list
