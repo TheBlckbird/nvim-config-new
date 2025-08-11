@@ -51,6 +51,16 @@ return {
         on_attach = on_attach,
       })
     end,
+
+    lazy = false,
+
+    keys = {
+      { "<leader>ba", vim.lsp.buf.code_action, desc = "Show code actions" },
+      { "K", vim.lsp.buf.hover, desc = "Show hover lsp action" },
+      { "<leader>gd", vim.lsp.buf.definition, desc = "Goto definition" },
+      { "<leader>gr", vim.lsp.buf.references, desc = "Goto references" },
+      { "<leader>gf", vim.lsp.buf.format, desc = "Format document" },
+    },
   },
 
   {
