@@ -16,6 +16,7 @@ return {
         -- "stylua",
         "eslint",
         "marksman",
+        "prettier",
       },
     },
     --		event = "VeryLazy",
