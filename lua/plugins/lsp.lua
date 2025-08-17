@@ -16,7 +16,7 @@ return {
         -- "stylua",
         "eslint",
         "marksman",
-        "prettier",
+        -- "prettier",
       },
     },
     --		event = "VeryLazy",
@@ -45,9 +45,24 @@ return {
       vim.lsp.config("rust_analyzer", {
         capabilities = capabilities,
         on_attach = on_attach,
+        settings = {
+          ['rust-analyzer'] = {
+            checkOnSave = {
+              allFeatures = true,
+              overrideCommand = {
+                'cargo', 'clippy', '--workspace', '--message-format=json', '--all-targets', '--all-features'
+              },
+            },
+          },
+        },
       })
 
       vim.lsp.config("marksman", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      vim.lsp.config("gleam", {
         capabilities = capabilities,
         on_attach = on_attach,
       })
@@ -61,6 +76,7 @@ return {
       { "<leader>gd", vim.lsp.buf.definition,  desc = "Goto definition" },
       { "<leader>gr", vim.lsp.buf.references,  desc = "Goto references" },
       { "<leader>gf", vim.lsp.buf.format,      desc = "Format document" },
+      { "<leader>ra", vim.lsp.buf.rename,      desc = "Rename symbol" },
     },
   },
 
